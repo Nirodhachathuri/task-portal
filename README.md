@@ -50,10 +50,3 @@ npm run dev
 
 Open http://localhost:3000/register to create the first user.
 
-## Authentication
-
-Registration creates a user with a bcrypt password hash and signs the user into an HTTP-only session. Login verifies the password and creates the same type of session. Protected pages and API routes verify the session before accessing task data.
-
-## Prisma 7 SQLite decision
-
-Prisma 7 requires a driver adapter for database connections. This project therefore uses `@prisma/adapter-better-sqlite3` instead of calling `new PrismaClient()` without an adapter. The database remains SQLite because it is simple and appropriate for a small take-home assignment. A production deployment could move to PostgreSQL with the corresponding Prisma adapter.
